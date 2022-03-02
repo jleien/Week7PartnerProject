@@ -5,6 +5,7 @@
 **/
 package Model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -25,6 +26,7 @@ public class LegoTheme {
 	private int ID;
 	private String Category;
 	private Boolean LA; //license agreement
+	private LocalDate creationDate;
 	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
 	private List<LegoSet> listOfSets;
 	
@@ -32,11 +34,28 @@ public class LegoTheme {
 		super();
 	}
 	
-	public LegoTheme(int ID, String Category, Boolean LA, List<LegoSet> listOfSets) {
+	public LegoTheme(int ID, String Category, Boolean LA, LocalDate creationDate, List<LegoSet> listOfSets) {
 		super();
 		this.ID = ID;
 		this.Category = Category;
 		this.LA = LA;
+		this.creationDate = creationDate;
+		this.listOfSets = listOfSets;
+	}
+	
+	public LegoTheme(String Category, Boolean LA, LocalDate creationDate, List<LegoSet> listOfSets) {
+		super();
+		this.Category = Category;
+		this.LA = LA;
+		this.creationDate = creationDate;
+		this.listOfSets = listOfSets;
+	}
+	
+	public LegoTheme(String Category, Boolean LA, LocalDate creationDate) {
+		super();
+		this.Category = Category;
+		this.LA = LA;
+		this.creationDate = creationDate;
 	}
 
 	public int getID() {
@@ -69,6 +88,14 @@ public class LegoTheme {
 
 	public void setListOfSets(List<LegoSet> listOfSets) {
 		this.listOfSets = listOfSets;
+	}
+
+	public LocalDate getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(LocalDate creationDate) {
+		this.creationDate = creationDate;
 	}
 	
 }
