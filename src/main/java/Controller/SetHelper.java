@@ -16,7 +16,7 @@ import Model.LegoSet;
 
 
 public class SetHelper {
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("CIS175Week2Leiendecker");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Week7PartnerProject");
 
 	public void insertLegoSet(LegoSet sl) {
 		EntityManager em = emfactory.createEntityManager();
@@ -102,11 +102,11 @@ public class SetHelper {
 		return foundItems;
 	}
 	
-	public List<LegoSet> searchForLegoSetByTheme(String theme) {
+	public List<LegoSet> searchForLegoSetByDimensions(String dimensions) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<LegoSet> typedQuery = em.createQuery("select ls from LegoSet ls where ls.theme=:selectedTheme", LegoSet.class);
-		typedQuery.setParameter("selectedTheme", theme);
+		TypedQuery<LegoSet> typedQuery = em.createQuery("select ls from LegoSet ls where ls.dimensions=:selectedDimensions", LegoSet.class);
+		typedQuery.setParameter("selectedDimensions", dimensions);
 
 		List<LegoSet> foundItems = typedQuery.getResultList();
 		em.close();

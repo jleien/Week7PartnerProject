@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import Model.LegoSet;
 
-@WebServlet("/addSetServlet")
+@WebServlet("/addSetsServlet")
 public class AddSetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -30,17 +30,17 @@ public class AddSetServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		//int ID, String setName, int numPieces, double price, String theme
+		//int ID, String setName, int numPieces, double price, String dimensions
 		
 		String name = request.getParameter("name");
 		String numPiecesRaw = request.getParameter("numPieces");
 		String priceRaw = request.getParameter("price");
-		String theme = request.getParameter("theme");
+		String dimensions = request.getParameter("dimensions");
 		
 		int numPieces = Integer.parseInt(numPiecesRaw);
 		int price = Integer.parseInt(priceRaw);
 		
-		LegoSet ls = new LegoSet(name, numPieces, price, theme);
+		LegoSet ls = new LegoSet(name, numPieces, price, dimensions);
 		SetHelper dbo = new SetHelper();
 		dbo.insertLegoSet(ls);
 		getServletContext().getRequestDispatcher("/index.html").forward(request, response);

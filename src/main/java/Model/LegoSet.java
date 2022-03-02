@@ -28,26 +28,26 @@ public class LegoSet {
 	private int numPieces;
 	@Column(name = "price")
 	private double price;
-	@Column(name = "theme")
-	private String theme;
+	@Column(name = "dimensions")
+	private String dimensions;
 	
 	public LegoSet() {
 		super();
 	}
 	
-	public LegoSet(int ID, String setName, int numPieces, double price, String theme) {
+	public LegoSet(int ID, String setName, int numPieces, double price, String dimensions) {
 		setID(ID);
 		setSetName(setName);
 		setNumPieces(numPieces);
 		setPrice(price);
-		setTheme(theme);
+		setDimensions(dimensions);
 	}
 	
-	public LegoSet(String setName, int numPieces, double price, String theme) {
+	public LegoSet(String setName, int numPieces, double price, String dimensions) {
 		setSetName(setName);
 		setNumPieces(numPieces);
 		setPrice(price);
-		setTheme(theme);
+		setDimensions(dimensions);
 	}
 
 	public int getID() {
@@ -82,12 +82,12 @@ public class LegoSet {
 		this.price = price;
 	}
 
-	public String getTheme() {
-		return theme;
+	public String getDimensions() {
+		return dimensions;
 	}
 
-	public void setTheme(String theme) {
-		this.theme = theme;
+	public void setDimensions(String dimensions) {
+		this.dimensions = dimensions;
 	}
 	
 	

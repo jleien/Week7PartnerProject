@@ -45,7 +45,7 @@ public class NavigationServlet extends HttpServlet {
 		SetHelper dbo = new SetHelper();
 		String action = request.getParameter("doThisToSet");
 
-		String path = "/viewAllLegoSetsServlet";
+		String path = "/viewAllSetsServlet";
 
 		if (action.equals("delete")) {
 			try {

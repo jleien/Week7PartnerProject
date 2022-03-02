@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Lego Set Hub</title>
+<link rel="stylesheet" href="lego.css">
+</head>
+<body>
+<div>
+<form action = "addSetsServlet" method="post">
+<h1>Lego Set Hub</h1>
+<ul>
+<li>Set Name: <input type ="text" name = "name"> </li>
+<li>Number of Pieces: <input type = "text" name = "numPieces"> </li>
+<li>Price: <input type = "text" name = "price"> </li>
+<li>Dimensions: <input type = "text" name = "dimensions"> </li>
+</ul>
+<input type = "submit" value="Add Set">
+</form> <br/>
+<nav>
+<a href = "viewAllSetsServlet">View all sets</a>
+<a href = "viewAllThemesServlet">View all Themes</a>
+<a href = "addSetToThemeServlet">Create a Theme</a>
+</nav>
+</div>
+</body>
+</html>

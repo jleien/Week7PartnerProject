@@ -39,12 +39,12 @@ public class EditSetServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		SetHelper dbo = new SetHelper();
 		
-		//int ID, String setName, int numPieces, double price, String theme
+		//int ID, String setName, int numPieces, double price, String dimensions
 		
 		String name = request.getParameter("name");
 		String numPiecesRaw = request.getParameter("numPieces");
 		String priceRaw = request.getParameter("price");
-		String theme = request.getParameter("theme");
+		String dimensions = request.getParameter("dimensions");
 		
 		int numPieces = Integer.parseInt(numPiecesRaw);
 		int price = Integer.parseInt(priceRaw);
@@ -55,7 +55,7 @@ public class EditSetServlet extends HttpServlet {
 		setToUpdate.setSetName(name);
 		setToUpdate.setNumPieces(numPieces);
 		setToUpdate.setPrice(price);
-		setToUpdate.setTheme(theme);
+		setToUpdate.setDimensions(dimensions);
 		
 		
 		
