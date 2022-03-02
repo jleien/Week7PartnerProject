@@ -22,12 +22,10 @@ public class LegoSet {
 	@GeneratedValue
 	@Column(name = "ID")
 	private int ID;
-	@Column(name = "setName")
+	@Column(name = "name")
 	private String setName;
 	@Column(name = "numPieces")
 	private int numPieces;
-	@Column(name = "age")
-	private int age;
 	@Column(name = "price")
 	private double price;
 	@Column(name = "theme")
@@ -37,11 +35,17 @@ public class LegoSet {
 		super();
 	}
 	
-	public LegoSet(int ID, String setName, int numPieces, int age, double price, String theme) {
+	public LegoSet(int ID, String setName, int numPieces, double price, String theme) {
 		setID(ID);
 		setSetName(setName);
 		setNumPieces(numPieces);
-		setAge(age);
+		setPrice(price);
+		setTheme(theme);
+	}
+	
+	public LegoSet(String setName, int numPieces, double price, String theme) {
+		setSetName(setName);
+		setNumPieces(numPieces);
 		setPrice(price);
 		setTheme(theme);
 	}
@@ -68,14 +72,6 @@ public class LegoSet {
 
 	public void setNumPieces(int numPieces) {
 		this.numPieces = numPieces;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
 	}
 
 	public double getPrice() {
