@@ -11,7 +11,7 @@
 </head>
 <body>
 <form action = "editSetServlet" method="post">
-Set Name: <input type ="text" name = "name" value= "${setToEdit.name}">>
+Set Name: <input type ="text" name = "name" value= "${setToEdit.setName}">>
 Number of Pieces: <input type = "text" name = "numPieces" value= "${setToEdit.numPieces}">>
 Price: <input type = "text" name = "price" value= "${setToEdit.price}">>
 Dimensions: <input type = "text" name = "dimensions" value= "${setToEdit.dimensions}">>

@@ -61,7 +61,7 @@ public class EditSetServlet extends HttpServlet {
 		
 		dbo.updateLegoSet(setToUpdate);
 		
-		getServletContext().getRequestDispatcher("/viewAllLegoSetsServlet").forward(request, response);
+		getServletContext().getRequestDispatcher("/viewAllSetsServlet").forward(request, response);
 	}
 
 }

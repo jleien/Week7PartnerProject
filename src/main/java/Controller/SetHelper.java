@@ -37,9 +37,9 @@ public class SetHelper {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		TypedQuery<LegoSet> typedQuery = em.createQuery(
-				"SELECT ls FROM LegoSet ls WHERE ls.name = :selectedName AND s.numPieces = :selectedType", LegoSet.class);
+				"SELECT ls FROM LegoSet ls WHERE ls.setName = :selectedName AND ls.numPieces = :selectedNumPieces", LegoSet.class);
 		typedQuery.setParameter("selectedName", toDelete.getSetName());
-		typedQuery.setParameter("selectedType", toDelete.getNumPieces());
+		typedQuery.setParameter("selectedNumPieces", toDelete.getNumPieces());
 
 		typedQuery.setMaxResults(1);
 		LegoSet result = typedQuery.getSingleResult();
