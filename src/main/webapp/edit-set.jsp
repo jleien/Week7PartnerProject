@@ -7,9 +7,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Set Editor</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lego.css">
 </head>
 <body>
+<div>
 <form action = "editSetServlet" method="post">
 Set Name: <input type ="text" name = "name" value= "${setToEdit.setName}">>
 Number of Pieces: <input type = "text" name = "numPieces" value= "${setToEdit.numPieces}">>
@@ -19,6 +20,6 @@ Dimensions: <input type = "text" name = "dimensions" value= "${setToEdit.dimensi
 <input type = "hidden" name = "ID" value="${setToEdit.ID}">
 <input type = "submit" value="Save Edited Item">
 </form>
-
+</div>
 </body>
 </html>
